@@ -18,30 +18,7 @@ SQLite** para guardar as contas e o progresso de cada um.
 > velocidade por volta**, além do modo **ARCADE** com a fase secreta.
 
 ## Como jogar
-
-O jogo precisa de um servidor (Node.js) por causa do login e do banco de dados.
-
-### Rodar no computador
-
-```bash
-node --experimental-sqlite server.js
-# ou: npm start
-```
-
-Depois abra **http://localhost:3000**. Não precisa instalar dependências
-(o servidor usa apenas módulos nativos do Node 22.5+).
-
-### Publicar no Render
-
-1. Crie um **Web Service** apontando para este repositório.
-2. Build Command: `npm install` (ou deixe vazio).
-3. Start Command: `npm start`.
-4. Use Node **22.5 ou superior** (o `package.json` já declara isso).
-5. Para o banco não ser apagado a cada deploy, adicione um **disco persistente**
-   montado em `/var/data` e configure a variável `DATA_DIR=/var/data`.
-   Sem o disco, o SQLite funciona, mas é recriado a cada publicação.
-
-> GitHub Pages/hospedagem estática **não** consegue rodar o login nem o banco.
+- **É só acessar o link no repositório principal que te redirecionará para o jogo**
 
 ### Controles
 
@@ -225,6 +202,8 @@ dela aparece o **PILAR PRETO** (o último pilar do jogo). Ele é o único que
   começa **zerada**.
 
 ## 💾 Progresso salvo (SQLite + localStorage)
+
+***OBS:*** Infelizmente o Banco de Dados só funciona no render se você assinar o plus, oque significa que a cada deploy o Banco perde seus dados
 
 - O save oficial fica no **banco SQLite** (`data/jogo.db`), por usuário:
   pontos, vidas, moedas, total coletado, recorde, vitórias, rodadas, avatar,
